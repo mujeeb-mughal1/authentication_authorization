@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Join the Club</title>
+</head>
+<body>
+  <h1>Join the Club</h1>
+  <a href="/">Back to Home</a>
+
+  <% if (error) { %>
+    <p style="color:red;"><%= error %></p>
+  <% } %>
+
+  <form action="/join" method="POST">
+    <label for="passcode">Secret Passcode</label>
+    <input id="passcode" name="passcode" type="password" required />
+    <button type="submit">Unlock Membership</button>
+  </form>
+</body>
+</html>

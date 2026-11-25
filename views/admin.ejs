@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Become Admin</title>
+</head>
+<body>
+  <h1>Admin Access</h1>
+  <a href="/">Back to Home</a>
+
+  <% if (currentUser && currentUser.is_admin) { %>
+    <p>You already have admin privileges.</p>
+  <% } %>
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+
+  <form action="/admin" method="POST">
+    <label for="passcode">Admin Passcode</label>
+    <input id="passcode" name="passcode" type="password" required />
+    <button type="submit">Grant Admin Access</button>
+  </form>
+</body>
+</html>
